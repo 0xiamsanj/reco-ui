@@ -9,10 +9,10 @@ class MovieCard extends React.Component {
     componentDidMount() {
         axios
             .get(
-                `https://www.omdbapi.com/?apikey=756abb2f&i=${this.props.movieID
-                }&plot=full`
+                `http://127.0.0.1:8000/api/movies`
             )
             .then(res => res.data)
+            
             .then(res => {
                 this.setState({ movieData: res });
             });
